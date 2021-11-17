@@ -1,6 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <iomanip> 
+
+/*
+ *Justin Iness
+ *11/17/2021
+ *Student List
+ * C++ Programming
+ */
 
 using namespace std;
 struct Student { //student struct
@@ -63,8 +71,9 @@ void deleteStudent(vector<Student*>* in) {
 		cout << "Couldn't find a student with that ID" << endl;
 	}
 }
-void printStudent(vector<Student*>* in) { 
+void printStudent(vector<Student*>* in) {
 	for (vector<Student*>::iterator i = in->begin(); i != in->end(); i++) { // iterate vector
-		cout << (*i)->firstName << " " << (*i)->lastName << " " << (*i)->id << " " << (*i)->gpa << endl; // output student info
+		cout << (*i)->firstName << " " << (*i)->lastName << " " << (*i)->id << " " << std::setprecision(3) << (*i)->gpa << endl; // output student info
 	}
 }
+
